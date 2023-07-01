@@ -1,0 +1,49 @@
+* {
+  all: unset;
+  font-family: BlexMono Nerd Font;
+  font-weight: bold;
+  font-size: large;
+}
+
+.active {
+  color: rgba(255, 255, 255, 0.753);
+}
+
+.dim {
+  color: rgba(75, 99, 67, 0.418);
+}
+.brightbar trough highlight {
+  background-image: linear-gradient(
+    to right,
+    #e4c9af 30%,
+    #f2cdcd 50%,
+    #e0b089 100% * 50
+  );
+  border-radius: 10px;
+}
+.volbar trough highlight {
+  background-image: linear-gradient(
+    to right,
+    #afcee0 30%,
+    #a1bdce 50%,
+    #77a5bf 100% * 50
+  );
+  border-radius: 10px;
+}
+
+.dockbox{
+  background-color: rgba(32, 32, 32, 0.877);
+  padding: .3rem;
+  border-radius: 10px;
+
+}
+.sensor{
+  background-color: greenyellow;
+}
+.appicon {
+  background-repeat: no-repeat;
+  background-size: 40px;
+  min-height: 40px;
+  min-width: 40px;
+}
+

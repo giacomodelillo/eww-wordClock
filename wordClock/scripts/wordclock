@@ -1,0 +1,126 @@
+#!/bin/sh
+
+screenshot() {
+
+  if [ "$1" = "selection" ]
+  then
+     sleep 1
+     grim -g "$(slurp -b 191a195c -c ffffff -d)"
+  fi
+  if [ "$1" = "full" ]
+  then
+    sleep 1
+    grim -g "$(slurp -b 191a195c -c ffffff -d -o)"
+  fi
+
+}
+
+
+hour() {
+ hour=$(date +%I)
+ echo $hour
+}
+
+minutes(){
+ minutes=$(date +%M)
+ echo $minutes
+}
+
+reboot(){
+systemctl reboot
+}
+
+shutdown(){
+systemctl poweroff
+}
+
+updates(){
+  cmd=$(checkupdates 2> /dev/null | wc -l)
+  default="P A R Q U S P Z P A Y J P L Y Q P V"
+  string="2"
+
+  if [ $cmd -gt "99" ]
+  then
+     string="${default:0:-4}"
+  else
+    if [ $cmd -ge "10" ]
+    then
+      string="${default:0:-2}"
+    else
+       string="${default}"
+    fi
+  fi
+
+  if [ "$1" = "number" ]
+  then
+    echo "$(checkupdates 2> /dev/null | wc -l  | sed 's/./& /g')󰏔 "
+  fi
+  if [ "$1" = "string" ]
+  then
+    echo $string
+  fi
+  
+}
+
+volume(){
+  cmd=$(pamixer --get-volume)
+  default="L Q W U Y A Q M W B Z U D Y G N M S"
+  string="2"
+
+  if [ "$1" = "up" ]
+  then
+    pamixer -i 5
+  fi
+  if [ "$1" = "down" ]
+  then
+    pamixer -d 5
+  fi
+
+  if [ $cmd -gt "99" ]
+  then
+     string="${default:0:-4}"
+  else
+    if [ $cmd -ge "10" ]
+    then
+      string="${default:0:-2}"
+    else
+       string="${default}"
+    fi
+  fi
+
+  if [ "$1" = "number" ]
+  then
+   is_true=$(pamixer --get-mute)
+   if [ "$is_true" = true ]
+   then
+    echo "$(pamixer --get-volume | sed 's/./& /g')󰝟 "
+   else
+    echo "$(pamixer --get-volume | sed 's/./& /g')󰕾 "
+   fi
+  fi
+  if [ "$1" = "string" ]
+  then
+    echo $string
+  fi 
+}
+
+is_past(){
+ minutes=$(date +%M)
+
+ if [ $minutes -gt "33" ]
+ then
+   echo false
+ else
+   echo true
+ fi
+}
+
+[ "$1" = "hour" ] && hour && exit
+[ "$1" = "minutes" ] && minutes && exit
+[ "$1" = "ip" ] && is_past && exit
+[ "$1" = "updates" ] && updates "$2" && exit
+[ "$1" = "volume" ] && volume "$2" && exit
+[ "$1" = "reboot" ] && reboot && exit
+[ "$1" = "shutdown" ] && shutdown && exit
+[ "$1" = "screenshot" ] && screenshot "$2" && exit
+exit

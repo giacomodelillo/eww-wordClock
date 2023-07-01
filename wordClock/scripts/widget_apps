@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [[ "$1" == "--tg" ]]; then
+	alacritty -e topgrade &
+
+elif [[ "$1" == "--ff" ]]; then
+	xdg-open 'https://www.google.com' &
+
+elif [[ "$1" == "--fm" ]]; then
+	nemo &
+
+elif [[ "$1" == "--ml" ]]; then
+	xdg-open 'https://mail.google.com' &
+
+elif [[ "$1" == "--vs" ]]; then
+	code &
+
+elif [[ "$1" == "--aux" ]]; then
+	pavucontrol &
+fi

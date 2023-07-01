@@ -1,0 +1,204 @@
+(defwidget update_app []
+  (button :class "active" :onclick "scripts/widget_apps --tg" "U P D A T E "))
+(defwidget files_app []
+  (button :class "active" :onclick "scripts/widget_apps --fm" "F I L E S "))
+(defwidget mails_app []
+  (button :class "active" :onclick "scripts/widget_apps --ml" "M A I L S "))
+(defwidget firefox_app []
+  (button :class "active" :onclick "scripts/widget_apps --ff" "B R O W S E R "))
+
+(defwidget letterWall []
+  (box	:class "notification" :orientation "v"
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "L A T Y B X H O N P ")(update_app)(label :class "dim" :text "F C I A")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "E Q N O X S A Q J P O Z K Q F M U X C V")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "H R M T M ")(files_app)(label	:class "dim" :text "P B P C K L H L E A")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "R D K L G I T F C K I N D Z P K U D J K")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "W M Q C K F D V W ")(firefox_app)(label	:class "dim" :text "E R K B")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "L Q W U Y A Q M W B Z U D Y G N M S X X")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "V M U K H J ")(mails_app)(label	:class "dim" :text "A E N G Y H G R O")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "U P P A R Q U S P Z P A Y J P L Y Q P V")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "B F R X C L E Q W H Y P S S H K M Z S U")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "R D K L G I T F C K I N D Z P K U D J K")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "L A T Y B X H O N P H M Z K N F C I A V")(label	:class "dim" :text " "))
+  )
+)
+
+(defwidget wordClock []
+  (box	:class "clock" :orientation "v"
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "active" :text "I T ' S ")
+      (label	:class "dim" :text "L M ")
+      (label	:class "active" :text "A B O U T ")
+      (label	:class "dim" :text "E")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text "A C ")
+      (label	:class { (date_minutes >= 13 && date_minutes <= 17) || (date_minutes >= 43 && date_minutes <= 47) ? "active" : "dim"} :text "F I F T E E N ")
+      (label	:class "dim" :text "D C O")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class {(date_minutes >= 18 && date_minutes <= 23) || (date_minutes >= 38 && date_minutes < 43) || (date_minutes >= 24 && date_minutes <= 27) || (date_minutes >= 33 && date_minutes <= 37) ? "active" : "dim"} :text "T W E N T Y ")
+      (label	:class {(date_minutes >= 3 && date_minutes <= 6) || (date_minutes >= 53) || (date_minutes >= 24 && date_minutes <= 27) || (date_minutes >= 33 && date_minutes <= 37) ? "active" : "dim"} :text "F I V E ")
+      (label	:class "dim" :text "X W")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class {(date_minutes >= 28 && date_minutes < 30) || (date_minutes >= 30 && date_minutes < 33)  ? "active" : "dim"}  :text "T H I R T Y ")
+      (label	:class "dim" :text "F ")
+      (label	:class {(date_minutes >= 7 && date_minutes <= 12) || (date_minutes >= 48 && date_minutes < 53) ? "active" : "dim"}  :text "T E N ")
+      (label	:class "dim" :text "O S")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class { date_minutes < 3 ? "dim" : "active"} :text "M I N U T E S ")
+      (label	:class "dim" :text "E ")
+      (label	:class { date_is_past || date_minutes < 3 ? "dim" : "active"} :text "T O ")
+      (label	:class "dim" :text "U R")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class { date_is_past == false || date_minutes < 3   ? "dim" : "active"} :text "P A S T ")
+      (label	:class "dim" :text "O R U ")
+      (label	:class {(date_hour == 4 && date_is_past)  || (date_is_past == false && date_hour == 3)? "active" : "dim"} :text "F O U R ")
+      (label	:class "dim" :text "T")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class {(date_hour == 7 && date_is_past)  || (date_is_past == false && date_hour == 6) ? "active" : "dim"} :text "S E V E N ")
+      (label	:class "dim" :text "X ")
+      (label	:class {(date_hour == 12 && date_is_past)  || (date_is_past == false && date_hour == 11) ? "active" : "dim"} :text "T W E L V E")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class {(date_hour == 9 && date_is_past)  || (date_is_past == false && date_hour == 8) ? "active" : "dim"} :text "N I N E ")
+      (label	:class {(date_hour == 5 && date_is_past)  || (date_is_past == false && date_hour == 4) ? "active" : "dim"} :text "F I V E ")
+      (label	:class "dim" :text "C ")
+      (label	:class {(date_hour == 2 && date_is_past)  || (date_is_past == false && date_hour == 1) ? "active" : "dim"} :text "T W O")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class {(date_hour == 8 && date_is_past)  || (date_is_past == false && date_hour == 7) ? "active" : "dim"} :text "E I G H T ")
+      (label	:class "dim" :text "F ")
+      (label	:class {(date_hour == 11 && date_is_past)  || (date_is_past == false && date_hour == 10) ? "active" : "dim"} :text "E L E V E N")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class {(date_hour == 6 && date_is_past)  || (date_is_past == false && date_hour == 5) ? "active" : "dim"} :text "S I X ")
+      (label	:class {(date_hour == 3 && date_is_past)  || (date_is_past == false && date_hour == 2) ? "active" : "dim"} :text "T H R E E ")
+      (label	:class {(date_hour == 1 && date_is_past)  || (date_is_past == false && date_hour == 12) ? "active" : "dim"} :text "O N E ")
+      (label	:class "dim" :text "G")
+    )
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class {(date_hour == 10 && date_is_past) || (date_is_past == false && date_hour == 9) ? "active" : "dim"} :text "T E N ")
+      (label	:class "dim" :text "S E ")
+      (label	:class "active" :text "O ' C L O C K")
+    )
+    
+  )
+)
+
+(defwidget reboot_full []
+  (button :class "active" :onclick "scripts/wordclock reboot" "R E B O O T 󰿄 "))
+(defwidget shutdown_full []
+  (button :class "active" :onclick "scripts/wordclock shutdown" "S H U T D O W N 󱘖 "))
+(defwidget screenshot []
+  (button :class "active" :timeout "5s" :onclick "scripts/wordclock screenshot selection" :onrightclick "scripts/wordclock screenshot full" "󱣴 "))
+
+; (defwidget volume []
+  ;   (scale :class "volbar"
+    ;     :value volume_percent
+    ;     :orientation "h"
+    ;     :tooltip "${volume_percent}%"
+    ;     :max 100
+    ;     :min 0
+  ;   :onchange "amixer -D pulse sset Master {}%" ))
+
+(defwidget notificationWall []
+  (box	:class "notification" :orientation "v"
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(screenshot)(label	:class "dim" :text "A T Y B X H O N P H M Z K N F C I A V")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "E Q N O X S A Q J P O Z K Q F M U X C V")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "H R M T M Q V F N Z P B P C K L H L E A")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "R D K L G I T F C K I N D Z P K U D J K")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "W M Q C K F D V W E T Z I A Q R E R K B")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+       (label	:class "dim" :text " ")(eventbox :onscroll "scripts/wordclock volume {}" :onclick "pamixer -t" :onrightclick "scripts/widget_apps --aux" (label	:class "active" :text volume_percent_number))(label :class "dim" :text volume_percent_string)(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "V M U K H J W D J C G B E K G Y H G R O")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "active" :text number_updates_number)(label	:class "dim" :text number_updates_string)(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(label	:class "dim" :text "B F R X C L E Q W H Y P S S H K M Z S U")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(reboot_full)(label	:class "dim" :text "P E K T K V O Q D Z E M C")(label	:class "dim" :text " "))
+    (box	 :orientation "h" :space-evenly "false"
+      (label	:class "dim" :text " ")(shutdown_full)(label	:class "dim" :text "B N R C V U W U O S P")(label	:class "dim" :text " "))
+  )
+)
+
+(defwidget widgetWall []
+  (centerbox :orientation "h"
+    (notificationWall)
+    (wordClock)
+    (letterWall)
+  )
+)
+
+(defpoll date_hour	:interval "5m"	"scripts/wordclock hour")
+(defpoll date_minutes	:interval "5m"	"scripts/wordclock minutes")
+(defpoll date_is_past	:interval "5s"	"scripts/wordclock ip")
+(defpoll number_updates_number :interval "5h""scripts/wordclock updates number")
+(defpoll number_updates_string :interval "5h" "scripts/wordclock updates string")
+(defpoll volume_percent_number :interval "0s" "scripts/wordclock volume number")
+(defpoll volume_percent_string :interval "0s" "scripts/wordclock volume string")
+
+
+(defwindow clockWindow
+  :monitor 1
+  :geometry (geometry
+  :anchor "center center")
+  :stacking "bg"
+  :exclusive false
+(widgetWall)
+)
+
+; (defwidget apps_tray []
+;   (box :class "dockbox" :orientation "h" :spacing 15 :valign "center" :halign "center" :space-evenly "true" :vexpand "false" 
+;     (button :style "background-image: url('images/icons/firefox.png');" :class "appicon" :onclick "scripts/widget_apps --ff")
+;     (button :style "background-image: url('images/icons/vscode.png');" :class "appicon" :onclick "scripts/widget_apps --vs")
+;     (button :style "background-image: url('images/icons/files.png');" :class "appicon" :onclick "scripts/widget_apps --fm")
+;     (button :style "background-image: url('images/icons/audio.png');" :class "appicon" :onclick "scripts/widget_apps --aux"))
+; )
+
+; (defwindow sensor
+;   :monitor 1
+;   :geometry (geometry :x "0%"
+;     :y "0px"
+;     :width "100%"
+;     :height "1px"
+;   :anchor "bottom center")
+;   :stacking "bg"
+;   :exclusive false
+;   (eventbox :class "sensor" :onhover "eww -c ~/.config/eww/wordClock/ open --toggle floating_dock")
+; )
+
+; (defwindow floating_dock
+;   :monitor 1
+;   :geometry (geometry :x "0%"
+;     :y "1%"
+;     ; :width "20%"
+;     :height "40px"
+;   :anchor "bottom center")
+;   :stacking "bg"
+;   :exclusive false
+;   (apps_tray)
+; )
+
