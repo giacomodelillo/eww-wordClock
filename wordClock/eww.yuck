@@ -170,35 +170,3 @@
 (widgetWall)
 )
 
-; (defwidget apps_tray []
-;   (box :class "dockbox" :orientation "h" :spacing 15 :valign "center" :halign "center" :space-evenly "true" :vexpand "false" 
-;     (button :style "background-image: url('images/icons/firefox.png');" :class "appicon" :onclick "scripts/widget_apps --ff")
-;     (button :style "background-image: url('images/icons/vscode.png');" :class "appicon" :onclick "scripts/widget_apps --vs")
-;     (button :style "background-image: url('images/icons/files.png');" :class "appicon" :onclick "scripts/widget_apps --fm")
-;     (button :style "background-image: url('images/icons/audio.png');" :class "appicon" :onclick "scripts/widget_apps --aux"))
-; )
-
-; (defwindow sensor
-;   :monitor 1
-;   :geometry (geometry :x "0%"
-;     :y "0px"
-;     :width "100%"
-;     :height "1px"
-;   :anchor "bottom center")
-;   :stacking "bg"
-;   :exclusive false
-;   (eventbox :class "sensor" :onhover "eww -c ~/.config/eww/wordClock/ open --toggle floating_dock")
-; )
-
-; (defwindow floating_dock
-;   :monitor 1
-;   :geometry (geometry :x "0%"
-;     :y "1%"
-;     ; :width "20%"
-;     :height "40px"
-;   :anchor "bottom center")
-;   :stacking "bg"
-;   :exclusive false
-;   (apps_tray)
-; )
-
