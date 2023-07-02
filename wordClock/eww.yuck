@@ -154,9 +154,9 @@
 
 (defpoll date_hour	:interval "5m"	"scripts/wordclock hour")
 (defpoll date_minutes	:interval "5m"	"scripts/wordclock minutes")
-(defpoll date_is_past	:interval "5s"	"scripts/wordclock ip")
-(defpoll number_updates_number :interval "5h""scripts/wordclock updates number")
-(defpoll number_updates_string :interval "5h" "scripts/wordclock updates string")
+(defpoll date_is_past	:interval "0s"	"scripts/wordclock ip")
+(defpoll number_updates_number :interval "0s""scripts/wordclock updates number")
+(defpoll number_updates_string :interval "0s" "scripts/wordclock updates string")
 (defpoll volume_percent_number :interval "0s" "scripts/wordclock volume number")
 (defpoll volume_percent_string :interval "0s" "scripts/wordclock volume string")
 

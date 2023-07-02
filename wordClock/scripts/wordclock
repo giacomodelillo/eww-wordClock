@@ -35,7 +35,7 @@ systemctl poweroff
 }
 
 updates(){
-  cmd=$(checkupdates 2> /dev/null | wc -l)
+  cmd=$(checkupdates | wc -l)
   default="P A R Q U S P Z P A Y J P L Y Q P V"
   string="2"
 
