@@ -22,7 +22,6 @@ screenshot() {
     
 }
 
-
 hour() {
     hour=$(date +%I)
     echo $hour
@@ -38,6 +37,13 @@ reboot(){
 }
 
 shutdown(){
+    
+    while pgrep rclone
+    do
+        notify-send "Waiting Rclone to finish ..." -u normal
+        sleep 2
+    done
+    
     systemctl poweroff
 }
 
@@ -57,7 +63,7 @@ volume(){
     then
         pamixer -d 5
     fi
-
+    
     is_true=$(pamixer --get-mute)
     if [ "$is_true" = true ]
     then

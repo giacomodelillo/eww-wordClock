@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while pgrep rclone
+do
+    echo "Rclone va"
+    sleep 2
+done
+echo "Finito"

@@ -122,7 +122,7 @@
     (box	 :orientation "h" :space-evenly "false"
       (label	:class "dim" :text " ")(label	:class "dim" :text "H R M T M Q V F N Z P B P C K L H L E A")(label	:class "dim" :text " "))
     (box	 :orientation "h" :space-evenly "false"
-      (label	:class "dim" :text " ")(label	:class "dim" :text "R D K L G I T F C K I N D Z P K U D J K")(label	:class "dim" :text " "))
+      (label	:class "dim" :text " ")(label	:class "active" :text cloud_sync_check)(label	:class "dim" :text "D K L G I T F C K I N D Z P K U D J K")(label	:class "dim" :text " "))
     (box	 :orientation "h" :space-evenly "false"
       (label	:class "dim" :text " ")(label	:class "dim" :text "W M Q C K F D V W E T Z I A Q R E R K B")(label	:class "dim" :text " "))
     (box	 :orientation "h" :space-evenly "false"
@@ -140,7 +140,7 @@
 )
 
 
-
+(defpoll cloud_sync_check :interval "1m" "~/.config/hypr/scripts/upload_cloud")
 (defpoll number_updates_number :interval "5h" "scripts/wordclock updates")
 (defpoll volume_percent_number :interval "0s" "scripts/wordclock volume")
 
