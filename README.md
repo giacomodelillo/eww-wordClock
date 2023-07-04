@@ -1,20 +1,22 @@
 
 <a name="readme-top"></a>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
 ![Product Name Screen Shot][product-screenshot]
 
-This is is a simple Eww widget whit a little twist, is based on text. It can:
-- Display time
-- Display basic information
-- Button to action
+## About The Project
+This is is a simple Eww widget whit a little twist, is based on text. It's my personal solution to all those new trends that kinda copy each others. 
 
-Some example :
-- Scroll on volume increase or decrease volumen (You need pamixer)
-- Right click on volume toggle mute
-- Left click on volume open pavucontrol
+- ✅ Display time
+- ✅ Shortcut for screenshot
+- ✅ Rclone status
+- ✅ Audio shortcut (Click for toggle mute, scroll to set volume)
+- ✅ Arch linux Package monitor update
+- ✅ Basic action (Boot, Reboot, open Browser etc)
+
+External programs that i use : 
+- Rclone (Cloud Sync)
+- Pamixer (Audio)
+- Grim and Slurp for Screenshot on Wayland
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -22,7 +24,7 @@ Some example :
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/giacomodelillo/eww-wordClock/tree/main.git
+   git clone https://github.com/giacomodelillo/eww-wordClock/tree/main.git ~/.config/eww/
    ```
 2. Start Eww daemon
    ```sh
@@ -30,7 +32,7 @@ Some example :
    ```
 3. Start wordClock
    ```sh
-   eww -c ~/.config/eww/wordClock/ open clockWindow
+   eww -c ~/.config/eww/eww-wordClock/wordClock/ open clockWindow
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -46,4 +48,4 @@ Project Link: [https://github.com/giacomodelillo/eww-wordClock/tree/main](https:
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: img/imgClock.png
+[product-screenshot]: img/image250.png
