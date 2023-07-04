@@ -46,4 +46,4 @@ Project Link: [https://github.com/giacomodelillo/eww-wordClock/tree/main](https:
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: img/20230701_15h29m42s_grim.png
+[product-screenshot]: img/imgClock.png
